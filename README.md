@@ -32,7 +32,7 @@
 
   ### Screenshot of Application
 
-  ![Application Demo](assets\images\EmployeeCMS.gif)
+  ![Application Demo](https://github.com/robel-codes/Employee-CMS/blob/779419464c8cc7004fccbf824fd8b0bbd0322b21/assets/images/EmployeeCMS.gif)
 
   ---
 
