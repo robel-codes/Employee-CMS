@@ -15,7 +15,7 @@ const questions = [
         type: "list",
         name: "userChoice",
         message: "please select what you want to do with this Employee Content managment system?",
-        choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update Employee Roles", "Exit Program"]
+        choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update Employee Roles", "Update employee manager", "Exit Program",]
     }
 ];
 
@@ -64,6 +64,10 @@ function action(choice) {
         case "Update Employee Roles":
             updateERoles();
             break;
+        
+        case "Update employee manager":
+            updateManager();
+            break;
 
         default:
             console.log("Exit Option has been selected.");
@@ -96,7 +100,7 @@ function viewDepartments() {
 //function to query and display all roles
 function viewRoles() {
     db.query(
-        `SELECT * FROM role`,
+        'SELECT title, salary, department_id, department.name as dept_name from role inner join department on role.department_id=department.id',
         function (err, results) {
             if (err) throw err;
             console.table(results);
@@ -108,7 +112,7 @@ function viewRoles() {
 //function to query and display all employees
 function viewEmployees() {
     db.query(
-        `SELECT * FROM employee`,
+        'Select first_name, last_name, role_id as role, manager_id as manager,role.salary, role.title as role from employee inner join role on employee.role_id=role.id',
         function (err, results) {
             if (err) throw err;
             console.table(results);
@@ -134,7 +138,7 @@ function addDepartment() {
             },
             function (err, results) {
                 if (err) throw err;
-                console.log('\x1b[33m%s\x1b[0m', 'New department Added!\n');
+                console.log('\x1b[33m%s\x1b[0m', 'New department Added to the database!\n');
                 comfirmPrompt();
             }
         );        
@@ -180,7 +184,7 @@ function addRole() {
                         },
                         function (err, results) {
                             if (err) throw err;
-                            console.log('\x1b[33m%s\x1b[0m' ,'New Role Added\n');
+                            console.log('\x1b[33m%s\x1b[0m' ,'New Role Added to the database\n');
                             comfirmPrompt();
                         }
                     );
@@ -305,3 +309,4 @@ const updateERoles = () => {
         }
     )
 };
+
