@@ -30,6 +30,8 @@
 
   Watch this Video for a walk through of the app [Installation Demo](https://drive.google.com/file/d/1aMum4mZhIdOCPBqG9ujVVNUTgTjSJwbN/view?usp=sharing)
 
+  ### Screenshot of Application
+
   ![Application Demo](assets\images\EmployeeCMS.gif)
 
   ---
