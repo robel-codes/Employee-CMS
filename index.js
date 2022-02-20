@@ -15,7 +15,7 @@ const questions = [
         type: "list",
         name: "userChoice",
         message: "please select what you want to do with this Employee Content managment system?",
-        choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update Employee Roles", "Update employee manager", "Exit Program",]
+        choices: ["View All Departments", "View All Roles", "View All Employees", "Add a Department", "Add a Role", "Add an Employee", "Update Employee Roles", "Exit Program",]
     }
 ];
 
@@ -63,10 +63,6 @@ function action(choice) {
 
         case "Update Employee Roles":
             updateERoles();
-            break;
-        
-        case "Update employee manager":
-            updateManager();
             break;
 
         default:
